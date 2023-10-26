@@ -1,8 +1,10 @@
+# Start
 # Imports
 import spacy
 
 hulk_movie = "Will he save their world or destroy it? When the Hulk becomes too dangerous for the Earth, the Illuminati trick Hulk into a shuttle and launch him into space to a planet where the Hulk can live in peace. Unfortunately, Hulk land on the planet Sakaar where he is sold into slavery and trained as a gladiator."
 
+# Read movies textfile
 def read_movies():
     # Movies dictionary
     movies = {}
@@ -22,7 +24,7 @@ def read_movies():
      # Return movies list       
     return movies
 
-
+    # Compare movie descriptions
 def compare_movies(compare_desc):
     # Load spacy model
     nlp = spacy.load('en_core_web_md')
@@ -50,6 +52,8 @@ def compare_movies(compare_desc):
 
     return movie_scores
 
+
+# Suggest movie
 def suggest_movie():
 
 
@@ -59,15 +63,17 @@ def suggest_movie():
     highest_score = 0
     suggest_movie = None
 
-
+    # Iterate through similarity scores and movie title dictionary
     for title, score in scores.items():
         if score > highest_score:
             highest_score = score
             suggest_movie = title
-
+    # Return suggested movie title
     return suggest_movie
 
+# Call suggested movie funcion and print result
 print('suggested movie:', suggest_movie())
 
+# End
 
 
