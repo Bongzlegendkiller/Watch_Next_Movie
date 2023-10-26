@@ -44,7 +44,7 @@ def compare_movies(compare_desc):
 
         similarity_score = hulk_token.similarity(tokenized_desc)
 
-        print(title, similarity_score)
+        print(f"---------\n{title}\n{desc}\n similarity score: {similarity_score}\n")
 
         movie_scores.update({title: similarity_score})
 
